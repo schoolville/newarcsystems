@@ -44,12 +44,18 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 
     //Hero
     Route::get('hero', [AdminController::class, 'hero'])->name('admin.hero');
-    Route::post('update-hero', [AdminController::class, 'updatehero'])->name('admin.update.hero');
+    Route::post('update-hero/{id}', [AdminController::class, 'updatehero'])->name('admin.update.hero');
 
     //about
     Route::get('about', [AdminController::class, 'about'])->name('admin.about');
     Route::post('update-about/{id}', [AdminController::class, 'updateabout'])->name('admin.update.about');
+
+    //Features
     Route::get('feature', [AdminController::class, 'feature'])->name('admin.feature');
+    Route::post('add-feature', [AdminController::class, 'addfeature'])->name('admin.feature.add');
+    Route::get('get-feature/{id}', [AdminController::class, 'getfeature'])->name('admin.get.feature');
+    Route::get('delete-feature/{id}', [AdminController::class, 'deletefeature'])->name('admin.delete.feature');
+    Route::post('update-feature/{id}', [AdminController::class, 'updatefeature'])->name('admin.feature.update');
 
     //revenue
     Route::get('revenue', [AdminController::class, 'revenue'])->name('admin.revenue');

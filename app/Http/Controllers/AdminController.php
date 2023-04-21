@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Client;
 use App\Models\Collection;
+use App\Models\Feature;
+use App\Models\Hero;
 use App\Models\Revenue;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -99,7 +101,23 @@ class AdminController extends Controller
     }
 
     public function hero(){
-        return view('admin.hero');
+        $hero = DB::table('heroes')->first();
+        return view('admin.hero', compact('hero'));
+    }
+
+    public function updatehero(Request $request, $id){
+        $hero = Hero::find($id);
+        $hero->title = $request->title;
+        $hero->subtitle = $request->subtitle;
+        $hero->button = $request->button;
+        if ($request->hasfile('image')) {
+            $file1 = $request->file('image');
+            $image = time() . $file1->getClientOriginalName();
+            $file1->move(public_path() . "/uploads/hero/", $image);
+            $hero->image = $image;
+        }
+        $hero->update();
+        return redirect()->back()->with('success', 'Hero Updated');
     }
 
     public function about(){
@@ -128,7 +146,49 @@ class AdminController extends Controller
     }
 
     public function feature(){
-        return view('admin.feature');
+        $features = Feature::all();
+        return view('admin.feature', compact('features'));
+    }
+
+    public function addfeature(Request $request){
+        $features = new Feature();
+        $features->title = $request->title;
+        $features->text = $request->text;
+        if ($request->hasfile('icon')) {
+            $file2 = $request->file('icon');
+            $icon = time() . $file2->getClientOriginalName();
+            $file2->move(public_path() . "/uploads/features/", $icon);
+            $features->icon = $icon;
+        }
+        $features->save();
+        return redirect()->back()->with('success', 'Feature Added');
+    }
+
+    public function getfeature($id){
+        $features = Feature::find($id);
+        return response()->json([
+            "data" => $features,
+        ], 200);
+    }
+
+    public function updatefeature(Request $request, $id){
+        $features = Feature::find($id);
+        $features->title = $request->title;
+        $features->text = $request->text;
+        if ($request->hasfile('icon')) {
+            $file2 = $request->file('icon');
+            $icon = time() . $file2->getClientOriginalName();
+            $file2->move(public_path() . "/uploads/features/", $icon);
+            $features->icon = $icon;
+        }
+        $features->update();
+        return redirect()->back()->with('success', 'Feature Updated');
+    }
+
+    public function deletefeature($id){
+        $features = Feature::find($id);
+        $features->delete();
+        return redirect()->back()->with('success', 'Feature Deleted');
     }
 
     public function revenue(){
