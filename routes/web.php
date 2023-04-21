@@ -29,28 +29,35 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('admin.logout');
     Route::get('dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
-    //pages
+    //settings
     Route::get('settings', [AdminController::class, 'settings'])->name('admin.settings');
     Route::post('update-settings/{id}', [AdminController::class, 'updatesettings'])->name('admin.update.settings');
 
     Route::get('socialmedia', [AdminController::class, 'socialmedia'])->name('admin.socialmedia');
 
+    //clients
     Route::get('clients', [AdminController::class, 'clients'])->name('admin.clients');
     Route::post('add-clients', [AdminController::class, 'addclient'])->name('admin.clients.add');
     Route::get('get-clients/{id}', [AdminController::class, 'getclients'])->name('admin.get.clients');
     Route::get('delete-clients/{id}', [AdminController::class, 'deleteclients'])->name('admin.delete.clients');
     Route::post('update-client/{id}', [AdminController::class, 'updateclient'])->name('admin.clients.update');
 
+    //Hero
     Route::get('hero', [AdminController::class, 'hero'])->name('admin.hero');
+    Route::post('update-hero', [AdminController::class, 'updatehero'])->name('admin.update.hero');
+
+    //about
     Route::get('about', [AdminController::class, 'about'])->name('admin.about');
     Route::post('update-about/{id}', [AdminController::class, 'updateabout'])->name('admin.update.about');
     Route::get('feature', [AdminController::class, 'feature'])->name('admin.feature');
 
+    //revenue
     Route::get('revenue', [AdminController::class, 'revenue'])->name('admin.revenue');
     Route::post('update-revenue/{id}', [AdminController::class, 'updaterevenue'])->name('admin.update.revenue');
 
+    //revenue
     Route::get('collection', [AdminController::class, 'collection'])->name('admin.collection');
-    Route::post('update-collection/{id}', [AdminController::class, 'updatecollection'])->name('admin.update.collection');
+    Route::post('update-collections/{id}', [AdminController::class, 'updatecollections'])->name('admin.update.collection');
 
     Route::get('contact', [AdminController::class, 'contact'])->name('admin.contact');
 });

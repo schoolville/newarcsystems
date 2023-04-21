@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Client;
+use App\Models\Collection;
+use App\Models\Revenue;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -130,11 +132,41 @@ class AdminController extends Controller
     }
 
     public function revenue(){
-        return view('admin.revenue');
+        $revenue = DB::table('revenues')->first();
+        return view('admin.revenue', compact('revenue'));
+    }
+
+    public function updaterevenue(Request $request, $id){
+        $revenue = Revenue::find($id);
+        $revenue->text = $request->text;
+        if ($request->hasfile('image')) {
+            $file1 = $request->file('image');
+            $image1 = time() . $file1->getClientOriginalName();
+            $file1->move(public_path() . "/uploads/revenue/", $image1);
+            $revenue->image = $image1;
+        }
+        $revenue->update();
+
+        return redirect()->back()->with('success', 'Revenue Updated');
     }
 
     public function collection(){
-        return view('admin.collection');
+        $collections = DB::table('collections')->first();
+        return view('admin.collection', compact('collections'));
+    }
+
+    public function updatecollections(Request $request, $id){
+        $collections = Collection::find($id);
+        $collections->text = $request->text;
+        if ($request->hasfile('image')) {
+            $file1 = $request->file('image');
+            $image1 = time() . $file1->getClientOriginalName();
+            $file1->move(public_path() . "/uploads/collections/", $image1);
+            $collections->image = $image1;
+        }
+        $collections->update();
+
+        return redirect()->back()->with('success', 'Revenue Updated');
     }
 
     public function contact(){
