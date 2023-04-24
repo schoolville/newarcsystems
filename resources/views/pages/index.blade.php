@@ -30,7 +30,7 @@
     </section>
 
     <section class="sec-bg pt-5">
-        <div class="container">
+        <div class="container about-container">
             <div class="">
                 <p class="about-heading">About <span class="arc">ARC</span><span class="system">System</span></p>
             </div>
