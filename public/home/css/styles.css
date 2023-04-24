@@ -1,8 +1,307 @@
 * {
     margin: 0;
-    padding: 0
+    padding: 0;
+}
+
+.welcome-text {
+    margin-left: 3rem;
+    padding-left: 3rem;
+}
+
+.welcome-section {
+    background: #022539;
+}
+
+.welcome-section p, h1 {
+    color: #fff
+}
+
+.welcome-section h1 {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 60px
+}
+
+.welcome-section p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 35px
+}
+
+.welcome-heading {
+    color: #FB991C;
 }
 
 .sec-bg {
     background: #F0F0F0;
+    color: #022539;
 }
+
+.about-heading {
+    font-size: 35px !important;
+    line-height: 80px;
+}
+
+.arc {
+    font-weight: 800;
+}
+
+.system {
+    font-weight: 600 !important;
+    color: #248FA8 !important;
+}
+
+.about-us, .revenue-section {
+    text-align: justify;
+    line-height: 40px;
+    font-size: 20px
+}
+
+.img-top, .img-behind {
+    width: 291px !important;
+    height: 442px !important;
+}
+
+.img-top {
+    position: relative;
+    z-index: 4;
+}
+
+.img-behind {
+    position: relative;
+    bottom: 300px;
+    left: 141px;
+}
+
+.features-main-heading {
+    font-size: 35px;
+    padding-top: 44px
+}
+
+.features-heading p {
+    color: #248FA8 !important;
+    font-weight: 400 !important;
+    font-size: 35px !important;
+    line-height: 31px !important;
+    font-family: Bebas Neue !important
+}
+
+.features-card p {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.features {
+    background-position: initial !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.features-card, .feature-body {
+    background-color: #fff !important;
+    width: 335px;
+    height: 180px;
+}
+
+
+.feature-body {
+    padding: 20px
+}
+
+.owl-item {
+    width: 335px !important;
+}
+
+.revenue-section h3 {
+    font-weight: 700
+}
+
+.our-clients {
+    background: #248FA8
+}
+
+.clients-circle {
+    width: 117px !important;
+    height: 117px !important;
+    border-radius: 50% !important;
+    background-position: center !important;
+    background-size: contain !important;
+}
+
+.transform-text {
+    font-size: 25px;
+    line-height: 40px;
+    font-weight: 700;
+    color: #022539
+}
+
+.our-clients-heading {
+    font-size: 35px;
+}
+
+.description {
+    font-size: 20px;
+    color: #1F1E1E;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.get-touch {
+    font-size: 35px;
+    line-height: 80px;
+    font-weight: 600;
+    color: #022539
+}
+
+.address-heading p:first-child {
+    margin-bottom: 0
+}
+
+.contact-details-block {
+    background: #D9D9D9
+}
+
+.get-intouch-form input, textarea {
+    background-color: #D9D9D9;
+}
+
+.get-intouch-form textarea {
+    width: 100%;
+    height: 351px
+}
+
+footer {
+    background-color: #022539
+}
+
+
+.subscribe-form input {
+    padding: 10px 10px;
+}
+
+.subscribe-form input[type='submit'] {
+    background: #1D82FF;
+    border: #1D82FF;
+    padding: 12px 10px;
+    color: #fff
+}
+
+.social-icon-wrapper a > img {
+    width: 38px !important;
+    padding-right: 10px
+}
+
+.footer-policy-links span:not(:last-child) {
+    border-right: 2px solid #fff;
+    padding-right: 5px
+}
+
+
+.footer-two-news-letter {
+    padding-left: 30px
+}
+
+.address-block {
+    border-right: 1px #fff solid;
+    padding-right: 27px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .welcome-text {
+        margin-bottom: 75px;
+    }
+
+    .welcome-section h1 {
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 43px;
+    }
+
+    .welcome-section p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .welcome-text {
+        margin-left: 4px !important;
+        padding-left: 4px !important;
+    }
+
+    .container p {
+        line-height: 32px;
+    }
+
+    .container-fluid {
+        overflow: hidden !important
+    }
+
+    .img-top, .img-behind {
+        width: 196px !important;
+        height: 303px !important;
+    }
+
+    .img-behind {
+        position: relative;
+        right: 61px;
+        bottom: 146px;
+    }
+
+    .about-heading, .features-heading {
+       font-size: 35px !important;
+    }
+
+    .revenue-section-img {
+        text-align: center !important;
+    }
+
+    .revenue-section-img img {
+        width: 220px !important
+    }
+
+    .footer-two-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .footer-two-news-letter {
+        padding-left: 0px;
+    }
+
+    .social-icon-wrapper, .subscribe-form p, input {
+        text-align: center !important
+    }
+
+    .subscribe-form {
+        padding-bottom: 10px !important;
+        text-align: center !important
+    }
+
+    .address-block {
+        border-right: none;
+        padding-right: 0px;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .features {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: initial !important;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
+
+
