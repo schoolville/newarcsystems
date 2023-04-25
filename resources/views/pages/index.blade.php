@@ -32,7 +32,7 @@
 
     <section class="sec-bg pt-5" id="about">
         <div class="container about-container">
-            <div class="">
+            <div class="about-heading-wrapper">
                 <p class="about-heading">About <span class="arc">ARC</span><span class="system">System</span></p>
             </div>
             <div class="row">
@@ -55,13 +55,14 @@
         </div>
     </section>
 
-    <section style="background: url({{ asset('home/images/bkg.png') }})" class="features" id="features">
-        <div class="text-center text-white features-main-heading">
-            <p>Features</p>
-        </div>
-        <div class="container-fliud">
-            <div class="row">
-                <div class="loop owl-carousel owl-theme owl-loaded owl-drag">
+
+    <section class="features" style="background: url({{ asset('home/images/bkg.png') }}); height: 461px"  id="features">
+        <div class="">
+            <div class="text-center features-main-heading">
+                <p class="text-white text-center our-features-heading">Features</p>
+            </div>
+            <div class="row my-5">
+                <div class="owl-carousel owl-theme">
                     <div class="owl-stage-outer">
                         <div class="features-card mb-5" style="">
                             <div class="border-0 shadow rounded">
@@ -137,6 +138,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -146,7 +148,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="mb-4">
+                    <div class="mb-4 rev-heading">
                         <h3>Revenue</h3>
                     </div>
                     <div class="row">
@@ -164,7 +166,7 @@
 
 
                 <div class="col-lg-12 my-5" id="collection">
-                    <div class="mb-4">
+                    <div class="mb-4 rev-heading">
                         <h3>Collection</h3>
                     </div>
                     <div class="row">
@@ -182,16 +184,46 @@
 
                 <div class="col-lg-12" id="clients">
                     <div class="mb-4 text-center">
-                        <p class="our-clients-heading">Our Clients</p>
+                        <h3 class="our-clients-heading">Our Clients</h3>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container-fliud our-clients">
+        <div class="our-clients"  style="height: 285px">
            <div class="row">
-                <div class="owl-carousel owl-theme">
-                    <div class="item clients-circle my-4">
+                <div class="loop owl-carousel owl-theme pt-5">
+                    <div class="item clients-circle mt-4">
+                        <div class="border-0 shadow rounded">
+                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
+                        </div>
+                    </div>
+                    <div class="item clients-circle mt-4">
+                        <div class="border-0 shadow rounded">
+                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
+                        </div>
+                    </div>
+                    <div class="item clients-circle mt-4">
+                        <div class="border-0 shadow rounded">
+                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
+                        </div>
+                    </div>
+                    <div class="item clients-circle mt-4">
+                        <div class="border-0 shadow rounded">
+                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
+                        </div>
+                    </div>
+                    <div class="item clients-circle mt-4">
+                        <div class="border-0 shadow rounded">
+                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
+                        </div>
+                    </div>
+                    <div class="item clients-circle mt-4">
+                        <div class="border-0 shadow rounded">
+                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
+                        </div>
+                    </div>
+                    <div class="item clients-circle mt-4">
                         <div class="border-0 shadow rounded">
                             <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
                         </div>
@@ -211,13 +243,18 @@
             </div>
 
             <div class="my-5 text-center">
-                <p class="get-touch mb-0">Get in touch</p>
+                <h3 class="get-touch mb-0">Get in touch</h3>
                 <p class="description">A short description goes here</p>
             </div>
 
             <div class="row px-3">
-                <div class="col-lg-9">
-                    <form action="" class="get-intouch-form">
+                <div class="col-lg-9 position-relative">
+                    <img class="bell" src="{{ asset('home/images/bell.svg') }}" alt="" style="
+                    width: 300px;
+                    position: absolute;
+                    left: -154px;
+                    top: -167px;">
+                    <form action="" class="get-intouch-form" style=" position: inherit; z-index: 100">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" class="form-control p-3" placeholder="Enter your name" required>
@@ -338,5 +375,12 @@
                 </div>
             </div>
         </footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-4 footer-color-bars-1"></div>
+                <div class="col-lg-4 col-4 footer-color-bars-2"></div>
+                <div class="col-lg-4 col-4 footer-color-bars-3"></div>
+            </div>
+        </div>
     </section>
 @endsection
