@@ -5,7 +5,8 @@
 @endsection
 
 @section('content')
-    <section class="welcome-section">
+
+    <section class="welcome-section" id="#home">
         <div class="container-fluid">
             <div class="row py-5">
                 <div class="col-lg-7 mt-5">
@@ -29,7 +30,7 @@
         </div>
     </section>
 
-    <section class="sec-bg pt-5">
+    <section class="sec-bg pt-5" id="about">
         <div class="container about-container">
             <div class="">
                 <p class="about-heading">About <span class="arc">ARC</span><span class="system">System</span></p>
@@ -54,7 +55,7 @@
         </div>
     </section>
 
-    <section style="background: url({{ asset('home/images/bkg.png') }})" class="features">
+    <section style="background: url({{ asset('home/images/bkg.png') }})" class="features" id="features">
         <div class="text-center text-white features-main-heading">
             <p>Features</p>
         </div>
@@ -141,7 +142,7 @@
         </div>
     </section>
 
-    <section class="my-5 revenue-section">
+    <section class="my-5 revenue-section" id="revenue">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -162,7 +163,7 @@
                 </div>
 
 
-                <div class="col-lg-12 my-5">
+                <div class="col-lg-12 my-5" id="collection">
                     <div class="mb-4">
                         <h3>Collection</h3>
                     </div>
@@ -179,7 +180,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-12">
+                <div class="col-lg-12" id="clients">
                     <div class="mb-4 text-center">
                         <p class="our-clients-heading">Our Clients</p>
                     </div>
@@ -200,7 +201,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="contacts">
         <div class="container">
             <div class="my-5 text-center">
                 <p class="transform-text">
