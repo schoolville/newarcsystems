@@ -14,9 +14,9 @@
                         <div class="welcome-text">
                             {!!$hero->title!!}
                             {!!$hero->subtitle!!}
-                            <a href="" style="
+                            <button style="
                             width: 255.28px;
-                            padding: 24px 26px 24px 26px;"  class="btn btn-lg btn-outline-light">{{$hero->button}}</a>
+                            padding: 24px 26px 24px 26px;"  class="btn btn-lg btn-outline-light button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">{{$hero->button}}</button>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                                         <img src="{{asset('/uploads/features/'.$feature->icon)}}" alt="" style="width: 40px !important">
                                         <p class="ps-2 mb-0 text-uppercase">{{$feature->title}}</p>
                                     </div>
-                                    <p>
+                                    <p >
                                         {{$feature->text}}
                                     </p>
                                 </div>
@@ -127,10 +127,12 @@
                 <div class="loop owl-carousel owl-theme pt-5">
                     @foreach ($clients as $client)
                        <div class="item clients-circle mt-4">
-                        <div class="border-0 shadow rounded">
+                        <div class="border-0 rounded">
                             <div class="clients-circle" style="background: url({{asset('/uploads/clients/'.$client->logo)}})"></div>
                         </div>
-                    </div>
+                        <p class="text-light">{{$client->name}}</p>
+                        </div>
+
                     @endforeach
                 </div>
            </div>
@@ -182,8 +184,12 @@
                 <div class="col-lg-3 mb-3">
                     <div class="contact-details-block p-4">
                         <div class="address-heading">
-                            <p>Email</p>
-                            <p><strong>{{$settings->email}}</strong></p>
+                            <p>Address</p>
+                            <p>
+                                <strong>
+                                    {{$settings->address}}
+                                </strong
+                            ></p>
                         </div>
 
                         <div class="address-heading">
@@ -194,24 +200,12 @@
                                 </strong>
                             </p>
                         </div>
-
                         <div class="address-heading">
-                            <p>Fax</p>
-                            <p>
-                                <strong>
-                                    {{$settings->phone_number}}
-                                </strong>
-                            </p>
+                            <p>Email</p>
+                            <p><strong>{{$settings->email}}</strong></p>
                         </div>
 
-                        <div class="address-heading">
-                            <p>Address</p>
-                            <p>
-                                <strong>
-                                    {{$settings->address}}
-                                </strong
-                            ></p>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -264,7 +258,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="text-center footer-policy-links">
-                                A Product of Schoolville
+                                A Product of  <strong> <a href="https://schoolville.com" target="_blank" style="text-decoration: none" class="text-info">Schoolville</a></strong>
                             </div>
                         </div>
                         <div class="col-lg-4">

@@ -7,6 +7,26 @@ section {
     overflow: hidden
 }
 
+@keyframes glowing {
+    0% {
+      background-color: transparent;
+      border: 2px solid #FB991C;
+      color: #FB991C;
+    }
+    50% {
+      background-color: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    100% {
+      background-color: transparent;
+      border: 2px solid #FB991C;
+      color: #FB991C;
+    }
+  }
+  .button {
+    animation: glowing 1300ms infinite;
+  }
 
 .navbar {
     padding: 0;
