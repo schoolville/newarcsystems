@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+section {
+    overflow: hidden
+}
+
 
 .navbar {
     padding: 0;
@@ -111,6 +115,50 @@
     color: #FB991C;
 }
 
+.about-heading:after { /* this is the border */
+    content:"";
+    display: block;
+    width: 3em;
+    max-width: 20%;
+    border-bottom: 0.1em solid #FB991C;
+    /* margin: 2em auto 0; */
+}
+
+.rev-heading:after { /* this is the border */
+    content:"";
+    display: block;
+    width: 4em;
+    max-width: 20%;
+    border-bottom: 0.1em solid #FB991C;
+}
+
+.our-clients-heading:after, .get-touch:after { /* this is the border */
+    content:"";
+    display: block;
+    width: 3em;
+    max-width: 20%;
+    border-bottom: 0.1em solid #FB991C;
+    margin: 5px auto
+}
+
+.our-features-heading:after { /* this is the border */
+    content:"";
+    display: block;
+    width: 3em;
+    max-width: 20%;
+    border-bottom: 0.1em solid #FB991C;
+    margin: 5px auto
+}
+
+/* .features-title:after {
+    content:"";
+    display: block;
+    width: 3em;
+    max-width: 20%;
+    border-bottom: 0.em solid #FB991C;
+    text-align: center !important
+} */
+
 .sec-bg {
     background: #F0F0F0;
     color: #022539;
@@ -196,7 +244,7 @@
 }
 
 .our-clients {
-    background: #248FA8
+    background: #248FA8;
 }
 
 .clients-circle {
@@ -216,6 +264,7 @@
 
 .our-clients-heading {
     font-size: 35px;
+    font-weight: 600
 }
 
 .description {
@@ -227,8 +276,8 @@
 
 .get-touch {
     font-size: 35px;
-    line-height: 80px;
-    font-weight: 600;
+    line-height: 46px;
+    font-weight: 700;
     color: #022539
 }
 
@@ -289,9 +338,22 @@ footer {
     margin-bottom: -200px
 }
 
+.features {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+
+    .bell {
+        width: 238px !important;
+        position: absolute !important;
+        left: -130px !important;
+        top: -121px !important;
+    }
 
     .navbar-collapse {
         background: rgb(36 143 168) !important;
@@ -361,6 +423,12 @@ footer {
         margin-bottom: -80px
     }
 
+    .features {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
     .about-heading, .features-heading {
        font-size: 35px !important;
     }
@@ -396,24 +464,114 @@ footer {
         padding-right: 0px;
     }
 
+    .footer-color-bars-1, .footer-color-bars-2, .footer-color-bars-3 {
+        height: 10px !important
+    }
+
+    .footer-color-bars-1 {
+        background: #FB991C;
+    }
+
+    .footer-color-bars-3 {
+        background: #248FA8;
+    }
+
+    .footer-color-bars-2 {
+        background: #FFFFFF;
+    }
+
+    .about-heading:after {
+        content: "";
+        display: block;
+        width: 3em;
+        max-width: 30%;
+        border-bottom: 0.1em solid #FB991C;
+        margin-top: 12px;
+    }
+
+    .features-main-heading:after {
+        content: "";
+        display: block;
+        width: 3em;
+        max-width: 30%;
+        border-bottom: 0.1em solid #FB991C;
+        margin-top: 12px;
+    }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
+@media only screen and (min-width: 600px) {
+    .footer-color-bars-1 {
+        background: #FB991C;
+    }
+
+    .footer-color-bars-3 {
+        background: #248FA8;
+    }
+
+    .footer-color-bars-2 {
+        background: #FFFFFF;
+    }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
+@media only screen and (min-width: 768px) {
+    .footer-color-bars-1 {
+        background: #FB991C;
+    }
+
+    .footer-color-bars-3 {
+        background: #248FA8;
+    }
+
+    .footer-color-bars-2 {
+        background: #FFFFFF;
+    }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
     .features {
         background-repeat: no-repeat !important;
         background-size: cover !important;
-        background-position: initial !important;
+        background-position: center !important;
+    }
+
+    .footer-color-bars-1, .footer-color-bars-2, .footer-color-bars-3 {
+        height: 10px !important
+    }
+
+    .footer-color-bars-1 {
+        background: #FB991C;
+    }
+
+    .footer-color-bars-3 {
+        background: #248FA8;
+    }
+
+    .footer-color-bars-2 {
+        background: #FFFFFF;
     }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}
+@media only screen and (min-width: 1200px) {
+    .footer-color-bars-1, .footer-color-bars-2, .footer-color-bars-3 {
+        height: 10px !important
+    }
+
+    .footer-color-bars-1 {
+        background: #FB991C;
+    }
+
+    .footer-color-bars-3 {
+        background: #248FA8;
+    }
+
+    .footer-color-bars-2 {
+        background: #FFFFFF;
+    }
+}
 
 
