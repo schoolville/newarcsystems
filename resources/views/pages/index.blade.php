@@ -10,15 +10,17 @@
         <div class="container-fluid">
             <div class="row py-5">
                 <div class="col-lg-7 mt-5">
-                    <div class="d-flex align-item-center">
+                    <div class="d-flex align-item-center my-5">
                         <div class="welcome-text">
                             {!!$hero->title!!}
                             {!!$hero->subtitle!!}
-                            <a href="" class="btn btn-lg btn-outline-light">{{$hero->button}}</a>
+                            <a href="" style="
+                            width: 255.28px;
+                            padding: 24px 26px 24px 26px;"  class="btn btn-lg btn-outline-light">{{$hero->button}}</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5 mb-5">
+                <div class="col-lg-5 mb-5 my-5">
                     <div>
                         <img src="{{asset('/uploads/hero/'.$hero->image)}}" alt="" style="width: 100%">
                     </div>
@@ -65,7 +67,7 @@
                                 <div class="feature-body">
                                     <div class="d-flex align-items-center mb-2 features-heading">
                                         <img src="{{asset('/uploads/features/'.$feature->icon)}}" alt="" style="width: 40px !important">
-                                        <p class="ps-2 mb-0">{{$feature->title}}</p>
+                                        <p class="ps-2 mb-0 text-uppercase">{{$feature->title}}</p>
                                     </div>
                                     <p>
                                         {{$feature->text}}
@@ -75,68 +77,6 @@
                         </div>
                     </div>
                     @endforeach
-
-                    {{-- <div class="owl-stage-outer">
-                        <div class="features-card mb-5" style="">
-                            <div class="border-0 shadow rounded">
-                                <div class="feature-body">
-                                    <div class="d-flex align-items-center mb-2 features-heading">
-                                        <img src="{{ asset('home/images/feature1.svg') }}" alt="" style="width: 40px !important">
-                                        <p class="ps-2 mb-0">Demand Notice</p>
-                                    </div>
-                                    <p>
-                                        ARCSystems generate electronic invoices that can be sent directly to taxpayers via email, reducing the need for paper-based invoices.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-stage-outer">
-                        <div class="features-card mb-5" style="">
-                            <div class="border-0 shadow rounded">
-                                <div class="feature-body">
-                                    <div class="d-flex align-items-center mb-2 features-heading">
-                                        <img src="{{ asset('home/images/feature4.svg') }}" alt="" style="width: 40px !important">
-                                        <p class="ps-2 mb-0">Robost Reporting</p>
-                                    </div>
-                                    <p>
-                                        The system provides robust reporting capabilities, enabling administrators to track revenue collection, identify trends, and generate reports for analysis and planning.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-stage-outer">
-                        <div class="features-card mb-5" style="">
-                            <div class="border-0 shadow rounded">
-                                <div class="feature-body">
-                                    <div class="d-flex align-items-center mb-2 features-heading">
-                                        <img src="{{ asset('home/images/feature3.svg') }}" alt="" style="width: 40px !important">
-                                        <p class="ps-2 mb-0">Security</p>
-                                    </div>
-                                    <p>
-                                        The system provides  robust security measures to protect taxpayer data and prevent fraud.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-stage-outer">
-                        <div class="features-card mb-5 mx-4" style="">
-                            <div class="border-0 shadow rounded">
-                                <div class="feature-body">
-                                    <div class="d-flex align-items-center mb-2 features-heading">
-                                        <img src="{{ asset('home/images/feature2.svg') }}" alt="" style="width: 40px !important">
-                                        <p class="ps-2 mb-0">Scalability</p>
-                                    </div>
-                                    <p>
-                                        The system is capable of handling a high volume of transactions and be easily scalable as the number of taxpayers and revenue sources grows.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
-
                 </div>
             </div>
         </div>
@@ -192,37 +132,6 @@
                         </div>
                     </div>
                     @endforeach
-
-                    {{-- <div class="item clients-circle mt-4">
-                        <div class="border-0 shadow rounded">
-                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
-                        </div>
-                    </div>
-                    <div class="item clients-circle mt-4">
-                        <div class="border-0 shadow rounded">
-                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
-                        </div>
-                    </div>
-                    <div class="item clients-circle mt-4">
-                        <div class="border-0 shadow rounded">
-                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
-                        </div>
-                    </div>
-                    <div class="item clients-circle mt-4">
-                        <div class="border-0 shadow rounded">
-                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
-                        </div>
-                    </div>
-                    <div class="item clients-circle mt-4">
-                        <div class="border-0 shadow rounded">
-                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
-                        </div>
-                    </div>
-                    <div class="item clients-circle mt-4">
-                        <div class="border-0 shadow rounded">
-                            <div class="clients-circle" style="background: url({{ asset('home/images/client.svg') }})"></div>
-                        </div>
-                    </div> --}}
                 </div>
            </div>
         </div>
