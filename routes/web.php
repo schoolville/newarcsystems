@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 
@@ -12,12 +13,20 @@ Route::fallback(function(){
 
 //landing page
 Route::get('/', function(){
-    return view('pages.index');
+    $settings = DB::table('settings')->first();
+    $hero = DB::table('heroes')->first();
+    $features = DB::table('features')->first();
+    $collections = DB::table('collections')->first();
+    $clients = DB::table('clients')->first();
+    $revenues = DB::table('revenues')->first();
+    $about = DB::table('abouts')->first();
+    return view('pages.index', compact('settings', 'hero', 'features', 'collections', 'clients', 'revenues', 'about'));
 });
-
+Route::post('contactus', [AdminController::class, 'contactus'])->name('admin.contactus');
 Route::prefix('admin')->middleware(['guest'])->group(function () {
     Route::get('login', [AuthController::class, 'login'])->name('admin.login');
     Route::post('login', [AuthController::class, 'authenticate'])->name('admin.login');
+
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
@@ -61,4 +70,5 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('update-collections/{id}', [AdminController::class, 'updatecollections'])->name('admin.update.collection');
 
     Route::get('contact', [AdminController::class, 'contact'])->name('admin.contact');
+
 });

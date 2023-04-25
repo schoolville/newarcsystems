@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title') | {{ config('app.name') }}</title>
+    <meta name="description" content="{{$settings->app_description}}">
+    <meta name="keywords" content="ARCSystems">
+    <meta name="author" content="Schoolville">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title') | {{$settings->app_name}}</title>
+     <!-- Fevicon -->
+     <link rel="shortcut icon" href="{{asset('/uploads/settings/'.$settings->favicon)}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('home/css/styles.css') }}">
     {{-- <link rel="stylesheet" href="{{ mix('css/app.css') }}"> --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">

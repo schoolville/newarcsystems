@@ -3,7 +3,7 @@
     <div class="container">
         <div class="logo">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('home/images/logo.svg') }}" alt="logo" width="200">
+                <img src="{{asset('/uploads/settings/'.$settings->logo)}}" alt="logo" width="200">
             </a>
         </div>
 

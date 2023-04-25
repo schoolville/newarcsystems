@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUs;
+use App\Models\Hero;
 use App\Models\About;
 use App\Models\Client;
-use App\Models\Collection;
 use App\Models\Feature;
-use App\Models\Hero;
 use App\Models\Revenue;
 use App\Models\Setting;
+use App\Models\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -231,5 +233,19 @@ class AdminController extends Controller
 
     public function contact(){
         return view('admin.contact');
+    }
+
+    public function contactus(Request $request){
+
+        $MailData = [
+            'email' => $request->email,
+            'name' => $request->name,
+            'message' => $request->message
+        ];
+        Mail::to($request->email)
+        ->cc('info@arcsystems.ng')
+        ->send(new ContactUs($MailData));
+
+        return redirect()->back()->with('success',  'Message Sent');
     }
 }

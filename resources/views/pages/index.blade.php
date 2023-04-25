@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('title')
-    Arcsystem
+    Home
 @endsection
 
 @section('content')
@@ -12,18 +12,15 @@
                 <div class="col-lg-7 mt-5">
                     <div class="d-flex align-item-center">
                         <div class="welcome-text">
-                            <h1>
-                                Streamline Your Revenue Collection with
-                                <span class="welcome-heading">our Automated Payment Solutions</span>
-                            </h1>
-                            <p class="py-3">An essential tool for modern organizations looking to stay competitive in a fast-paced, technology-driven business environment.</p>
-                            <a href="" class="btn btn-lg btn-outline-light">Book consultation</a>
+                            {!!$hero->title!!}
+                            {!!$hero->subtitle!!}
+                            <a href="" class="btn btn-lg btn-outline-light">{{$hero->button}}</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5 mb-5">
                     <div>
-                        <img src="{{ asset('home/images/computers.svg') }}" alt="" style="width: 100%">
+                        <img src="{{asset('/uploads/hero/'.$hero->image)}}" alt="" style="width: 100%">
                     </div>
                 </div>
             </div>
@@ -38,17 +35,15 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="about-us">
-                        <p>
-                            Automated Revenue & Collection System (ARCSystems) is a technology-based solution that enables the efficient and effective collection of revenue from various sources. Our systems used to streamline the process of revenue collection, reduce errors and fraud, and improve overall revenue management.
-                            ARCSystems can be designed to handle various revenue collection tasks, including the collection of taxes, fees, fines, and other charges.
-                            One of the key benefits of an ARCSystems is that it can reduce the burden on manual processes and the associated costs. For example, it can reduce the need for paper-based records and manual data entry, which can be time-consuming and error-prone. ARCSystems can also improve the accuracy of revenue collection, as automated systems can identify errors and discrepancies more quickly than manual processes.
-                        </p>
+
+                            {!!$about->text!!}
+
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="imgs-from-ui">
-                        <div class="img-top" style="background: url({{ asset('home/images/bg-green.png') }})"></div>
-                        <div class="img-behind" style="background: url({{ asset('home/images/bg-blue.png') }})"></div>
+                        <div class="img-top" style="background: url({{asset('/uploads/about/'.$about->image1)}})"></div>
+                        <div class="img-behind" style="background: url({{asset('/uploads/about/'.$about->image2)}})"></div>
                     </div>
                 </div>
             </div>
@@ -217,21 +212,22 @@
 
             <div class="row px-3">
                 <div class="col-lg-9">
-                    <form action="" class="get-intouch-form">
+                    <form action="{{route('admin.contactus')}}" class="get-intouch-form" method="POST">
+                        @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" class="form-control p-3" placeholder="Enter your name" required>
+                                <input type="text" class="form-control p-3" name="name" placeholder="Enter your name" required>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control p-3" placeholder="Enter your email" required>
+                                <input type="email" class="form-control p-3" name="email" placeholder="Enter your email" required>
                             </div>
 
                             <div class="col-md-12 my-3">
-                                <textarea name="" placeholder="Your Message" class="p-3"></textarea>
+                                <textarea name="message" placeholder="Your Message" class="p-3"></textarea>
                             </div>
 
                             <div class="d-grid gap-2 mb-3">
-                                <a href="#" class="btn btn-primary py-3 fs-4" style="background: #022539 !important">SEND MESSAGE</a>
+                                <button type="submit" class="btn btn-primary py-3 fs-4" style="background: #022539 !important">SEND MESSAGE</button>
                             </div>
                         </div>
                     </form>
@@ -241,16 +237,14 @@
                     <div class="contact-details-block p-4">
                         <div class="address-heading">
                             <p>Email</p>
-                            <p><strong>info@arcsystems.ng</strong></p>
+                            <p><strong>{{$settings->email}}</strong></p>
                         </div>
 
                         <div class="address-heading">
                             <p>Phone</p>
                             <p>
                                 <strong>
-                                    +234 (0)803-741-6107 <br>
-                                    +234 (0)803-741-6107 <br>
-                                    +234 (0)803-741-6107
+                                    {{$settings->phone_number}}
                                 </strong>
                             </p>
                         </div>
@@ -259,9 +253,7 @@
                             <p>Fax</p>
                             <p>
                                 <strong>
-                                    +234 (0)803-741-6107 <br>
-                                    +234 (0)803-741-6107 <br>
-                                    +234 (0)803-741-6107
+                                    {{$settings->phone_number}}
                                 </strong>
                             </p>
                         </div>
@@ -270,7 +262,7 @@
                             <p>Address</p>
                             <p>
                                 <strong>
-                                    #110, 3rd Avenue, Gwarimpa,FCT, Abuja
+                                    {{$settings->address}}
                                 </strong
                             ></p>
                         </div>
@@ -285,7 +277,7 @@
             <div class="footer-wrapper">
                 <div class="container-fliud text-white">
                     <div class="d-flex justify-content-center py-3" style="border-bottom: solid 1px #fff">
-                        <img src="{{ asset('home/images/logo-white.svg') }}" alt="logo">
+                        <img src="{{asset('/uploads/settings/'.$settings->footer_logo)}}" alt="logo" height="150px" width="200px">
                     </div>
                     <div class="footer-two-content py-5 px-3 mb-5 d-flex justify-content-md-center justify-content-xxl-center justify-content-lg-center" style="border-bottom: solid 1px #fff">
                         <div class="address-block mb-3">
@@ -295,10 +287,10 @@
                                     <div class="d-flex align-items-baseline pt-1">
                                         <img src="{{ asset('home/images/MapPin.svg') }}" alt="">
                                     </div>
-                                    <p class="ps-2"> #110, 3rd Avenue, Gwarimpa, FCT, Abuja</p>
+                                    <p class="ps-2"> {{$settings->address}}</p>
                                 </div>
-                                <p class="pb-3"><img src="{{ asset('home/images/PhoneCall.svg') }}" alt=""> +234 09032432994;</p>
-                                <p><img src="{{ asset('home/images/EnvelopeSimple.svg') }}" alt=""> info@schoolville.com</p>
+                                <p class="pb-3"><img src="{{ asset('home/images/PhoneCall.svg') }}" alt=""> {{$settings->phone_number}};</p>
+                                <p><img src="{{ asset('home/images/EnvelopeSimple.svg') }}" alt=""> {{$settings->email}}</p>
                             </div>
                         </div>
                         <div class="footer-two-news-letter">
@@ -321,7 +313,7 @@
                         <div class="col-lg-4">
                             <div class="text-center">
                                 <span>Support:</span>
-                                <a href="mailto:info@schoolville.com">info@schoolville.com</a>
+                                <a href="mailto:info@schoolville.com">{{$settings->email}}</a>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -331,7 +323,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="text-center">
-                                <span>All rights reserved &copy; Copyright 2013-2023</span>
+                                <span>{{$settings->copywrite_text}} - {{\Carbon\Carbon::now()->format('Y')}}</span>
                             </div>
                         </div>
                     </div>
