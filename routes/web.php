@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Models\Client;
+use App\Models\Feature;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +17,9 @@ Route::fallback(function(){
 Route::get('/', function(){
     $settings = DB::table('settings')->first();
     $hero = DB::table('heroes')->first();
-    $features = DB::table('features')->first();
+    $features = Feature::all();
     $collections = DB::table('collections')->first();
-    $clients = DB::table('clients')->first();
+    $clients = Client::all();
     $revenues = DB::table('revenues')->first();
     $about = DB::table('abouts')->first();
     return view('pages.index', compact('settings', 'hero', 'features', 'collections', 'clients', 'revenues', 'about'));
